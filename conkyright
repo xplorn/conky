@@ -1,0 +1,123 @@
+background yes
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+out_to_console no
+
+use_xft yes
+
+xftfont Consolas:size=11
+
+xftalpha 0.8
+
+update_interval 1
+
+double_buffer yes
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 420 370
+maximum_width 420 
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+draw_graph_borders yes
+
+# Stippled borders?
+stippled_borders 8
+border_width 1
+
+# border margins
+border_inner_margin 4
+
+# border width
+border_width 1
+
+# own window options
+own_window yes
+own_window_transparent yes
+own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+default_color white
+default_shade_color white
+default_outline_color white
+
+minimum_size 410 10
+
+gap_x 13
+gap_y 25
+alignment top_right
+
+use_spacer none
+
+no_buffers no
+
+uppercase no
+
+TEXT
+${offset 280}${color}${font Consolas:size=36}${time %H}${offset 1}${voffset -24}${font Consolas:size=14}${time :%M:%S}
+${font nimbus mono L:size=13}${voffset -40}
+${execpi 60 DJS=`date +%_d`; cal -h | sed s/"\(^\|[^0-9]\)$DJS"'\b'/'\1${color yellow}'"$DJS"'$color'/}
+${font Consolas:size=11}${color red}System $hr
+${color}$nodename${offset 220}Uptime: $uptime
+$sysname $kernel on $machine
+${color red}Memory $hr
+${color}RAM Usage:$mem/$memmax - $memperc%
+$membar
+${color red}Processor $hr
+${color}Total CPU: ${cpu cpu0}%
+${cpubar 10}
+Load: $loadavg ${alignr}
+Core 1 Usage: ${cpu cpu1}% / ${freq_g 1} GHz
+${color black}${cpugraph cpu1 999999 CC0000}
+${color}Core 2 Usage: ${cpu cpu2}% / ${freq_g 2} GHz
+${color black}${cpugraph cpu2 999999 CC0000}
+${color}Core 3 Usage: ${cpu cpu3}% / ${freq_g 3} GHz
+${color black}${cpugraph cpu3 999999 CC0000}
+${color}Core 4 Usage: ${cpu cpu4}% / ${freq_g 4} GHz
+${color black}${cpugraph cpu4 999999 CC0000}
+${color}Name ${offset 170}PID ${offset 50}CPU% ${alignr}MEM%
+$hr
+${color red}Top 8 Processes by CPU$hr
+${color}${font Courier 10 Pitch:size=11}${color}${top name 1}${offset 42}${top pid 1} ${offset 34}${top cpu 1} ${alignr}${top mem 1}
+${color lightgrey}${top name 2}${offset 42}${top pid 2} ${offset 34}${top cpu 2} ${alignr}${top mem 2}
+${color lightgrey}${top name 3}${offset 42}${top pid 3} ${offset 34}${top cpu 3} ${alignr}${top mem 3}
+${color lightgrey}${top name 4}${offset 42}${top pid 4} ${offset 34}${top cpu 4} ${alignr}${top mem 4}
+${color lightgrey}${top name 5}${offset 42}${top pid 5} ${offset 34}${top cpu 5} ${alignr}${top mem 5}
+${color lightgrey}${top name 6}${offset 42}${top pid 6} ${offset 34}${top cpu 6} ${alignr}${top mem 6}
+${color lightgrey}${top name 7}${offset 42}${top pid 7} ${offset 34}${top cpu 7} ${alignr}${top mem 7}
+${color lightgrey}${top name 8}${offset 42}${top pid 8} ${offset 34}${top cpu 8} ${alignr}${top mem 8}
+${font Consolas:size=11}${color red}Top 8 Processes by Memory $hr
+${color}${font Courier 10 Pitch:size=11}${color}${top_mem name 1}${offset 42}${top_mem pid 1} ${offset 34}${top_mem cpu 1} ${alignr}${top_mem mem 1}
+${color lightgrey}${top_mem name 2}${offset 42}${top_mem pid 2} ${offset 34}${top_mem cpu 2} ${alignr}${top_mem mem 2}
+${color lightgrey}${top_mem name 3}${offset 42}${top_mem pid 3} ${offset 34}${top_mem cpu 3} ${alignr}${top_mem mem 3}
+${color lightgrey}${top_mem name 4}${offset 42}${top_mem pid 4} ${offset 34}${top_mem cpu 4} ${alignr}${top_mem mem 4}
+${color lightgrey}${top_mem name 5}${offset 42}${top_mem pid 5} ${offset 34}${top_mem cpu 5} ${alignr}${top_mem mem 5}
+${color lightgrey}${top_mem name 6}${offset 42}${top_mem pid 6} ${offset 34}${top_mem cpu 6} ${alignr}${top_mem mem 6}
+${color lightgrey}${top_mem name 7}${offset 42}${top_mem pid 7} ${offset 34}${top_mem cpu 7} ${alignr}${top_mem mem 7}
+${color lightgrey}${top_mem name 8}${offset 42}${top_mem pid 8} ${offset 34}${top_mem cpu 8} ${alignr}${top_mem mem 8}
+${font Consolas:size=11}
+${color red}Storage $hr
+${color}SWAP Usage: $swap/$swapmax - $swapperc% 
+$swapbar
+(/): ${fs_used /}/${fs_size /}
+${fs_bar /}
+(/media/keshelb/_data1/backup): ${fs_used /media/keshelb/_data1/backup}/${fs_size /media/keshelb/_data1/backup}
+${fs_bar /media/keshelb/_data1/backup}
+${color red}Network $hr
+${color}Wired (eth0)$alignr}IP address: ${addr eth0}
+Down: ${alignr}${downspeed eth0}
+${color black}${downspeedgraph eth0 999999 CC0000}
+${color}Up: ${alignr}${upspeed eth0}
+${color black}${upspeedgraph eth0 999999 CC0000}
+${color red}Default Route ${hr}
+${color}Interface: ${gw_iface} ${alignr}Gateway IP: ${gw_ip}
+Nameserver: ${nameserver}
