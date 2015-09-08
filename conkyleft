@@ -36,8 +36,8 @@ own_window no
 double_buffer yes
 
 # Minimum size of text area
-minimum_size 320 250
-maximum_width 320
+minimum_size 450 200
+maximum_width 450
 
 # Draw shades?
 draw_shades yes

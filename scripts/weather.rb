@@ -42,13 +42,13 @@ icons      = []
 conditions = []
 high       = []
 low        = []
-3.times do |index|
-  index = index + 1
+4.times do |index|
   days       << json[index]['date']['weekday']
   icons      << json[index]['icon']
   conditions << json[index]['conditions']
   high       << json[index]['high'][measurement]
   low        << json[index]['low'][measurement]
+  index = index + 1
 end
 
 File.open(file, 'w') do |f|
@@ -59,7 +59,7 @@ File.open(file, 'w') do |f|
   f.write("#{feelslike}\n")
   f.write("#{visibility}\n")
 
-  3.times do |index|
+  4.times do |index|
     f.write("#{days[index]}\n")
     f.write("#{icons[index]}\n")
     f.write("#{conditions[index]}\n")
@@ -86,9 +86,10 @@ out << "#{g20}#{c0}Temperature #{g130}#{c60}#{temp} F\n"
 out << "#{g20}#{c0}Humidity #{g130}#{c60}#{humidity}\n"
 out << "#{g20}#{c0}Feels like #{g130}#{c60}#{feelslike} F\n"
 out << "#{g20}#{c0}Visibility #{g130}#{c60}#{visibility} #{distance_unit}\n\n"
-out << "#{g20}#{c60}#{days[0]}${goto 125}#{days[1]}${goto 230}#{days[2]}\n\n\n\n"
-out << "#{img_tag(0, 10)}#{img_tag(1, 115)}#{img_tag(2, 220)}"
+out << "#{g20}#{c60}#{days[0]}${goto 125}#{days[1]}${goto 230}#{days[2]}${goto 350}#{days[3]}\n\n\n\n"
+out << "#{img_tag(0, 10)}#{img_tag(1, 115)}#{img_tag(2, 220)}#{img_tag(3, 330)}"
 out << "${goto 30}#{c60}#{high[0]}/#{low[0]} #{degree.upcase}"
 out << "${goto 130}#{high[1]}/#{low[1]} #{degree.upcase}"
 out << "${goto 240}#{high[2]}/#{low[2]} #{degree.upcase}"
+out << "${goto 350}#{high[3]}/#{low[3]} #{degree.upcase}"
 puts out
