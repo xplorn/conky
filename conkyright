@@ -7,7 +7,8 @@ out_to_console no
 
 use_xft yes
 
-xftfont Consolas:size=11
+#xftfont Monospace:size=12
+xftfont Bitstream Vera Sans Mono:size=12
 
 xftalpha 0.8
 
@@ -63,10 +64,10 @@ no_buffers no
 uppercase no
 
 TEXT
-${offset 280}${color}${font Consolas:size=36}${time %H}${offset 1}${voffset -24}${font Consolas:size=14}${time :%M:%S}
-${font nimbus mono L:size=13}${voffset -40}
+${offset 280}${color}${font Ariel:size=36}${time %H}${offset 1}${voffset -24}${font Ariel:size=14}${time :%M:%S}
+${font DejaVu Sans Mono:size=12}${voffset -40}
 ${execpi 60 DJS=`date +%_d`; cal -h | sed s/"\(^\|[^0-9]\)$DJS"'\b'/'\1${color yellow}'"$DJS"'$color'/}
-${font Consolas:size=11}${color red}System $hr
+${font Ariel:size=12}${color red}System $hr
 ${color}$nodename${offset 220}Uptime: $uptime
 $sysname $kernel on $machine
 ${color red}Memory $hr
@@ -87,7 +88,7 @@ ${color black}${cpugraph cpu4 999999 CC0000}
 ${color}Name ${offset 170}PID ${offset 50}CPU% ${alignr}MEM%
 $hr
 ${color red}Top 8 Processes by CPU$hr
-${color}${font Courier 10 Pitch:size=11}${color}${top name 1}${offset 42}${top pid 1} ${offset 34}${top cpu 1} ${alignr}${top mem 1}
+${color}${font DejaVu Sans Mono:size=11}${color}${top name 1}${offset 42}${top pid 1} ${offset 34}${top cpu 1} ${alignr}${top mem 1}
 ${color lightgrey}${top name 2}${offset 42}${top pid 2} ${offset 34}${top cpu 2} ${alignr}${top mem 2}
 ${color lightgrey}${top name 3}${offset 42}${top pid 3} ${offset 34}${top cpu 3} ${alignr}${top mem 3}
 ${color lightgrey}${top name 4}${offset 42}${top pid 4} ${offset 34}${top cpu 4} ${alignr}${top mem 4}
@@ -95,8 +96,8 @@ ${color lightgrey}${top name 5}${offset 42}${top pid 5} ${offset 34}${top cpu 5}
 ${color lightgrey}${top name 6}${offset 42}${top pid 6} ${offset 34}${top cpu 6} ${alignr}${top mem 6}
 ${color lightgrey}${top name 7}${offset 42}${top pid 7} ${offset 34}${top cpu 7} ${alignr}${top mem 7}
 ${color lightgrey}${top name 8}${offset 42}${top pid 8} ${offset 34}${top cpu 8} ${alignr}${top mem 8}
-${font Consolas:size=11}${color red}Top 8 Processes by Memory $hr
-${color}${font Courier 10 Pitch:size=11}${color}${top_mem name 1}${offset 42}${top_mem pid 1} ${offset 34}${top_mem cpu 1} ${alignr}${top_mem mem 1}
+${font Ariel:size=12}${color red}Top 8 Processes by Memory $hr
+${color}${font DejaVu Sans Mono:size=11}${color}${top_mem name 1}${offset 42}${top_mem pid 1} ${offset 34}${top_mem cpu 1} ${alignr}${top_mem mem 1}
 ${color lightgrey}${top_mem name 2}${offset 42}${top_mem pid 2} ${offset 34}${top_mem cpu 2} ${alignr}${top_mem mem 2}
 ${color lightgrey}${top_mem name 3}${offset 42}${top_mem pid 3} ${offset 34}${top_mem cpu 3} ${alignr}${top_mem mem 3}
 ${color lightgrey}${top_mem name 4}${offset 42}${top_mem pid 4} ${offset 34}${top_mem cpu 4} ${alignr}${top_mem mem 4}
@@ -104,7 +105,7 @@ ${color lightgrey}${top_mem name 5}${offset 42}${top_mem pid 5} ${offset 34}${to
 ${color lightgrey}${top_mem name 6}${offset 42}${top_mem pid 6} ${offset 34}${top_mem cpu 6} ${alignr}${top_mem mem 6}
 ${color lightgrey}${top_mem name 7}${offset 42}${top_mem pid 7} ${offset 34}${top_mem cpu 7} ${alignr}${top_mem mem 7}
 ${color lightgrey}${top_mem name 8}${offset 42}${top_mem pid 8} ${offset 34}${top_mem cpu 8} ${alignr}${top_mem mem 8}
-${font Consolas:size=11}
+${font Ariel:size=12}
 ${color red}Storage $hr
 ${color}SWAP Usage: $swap/$swapmax - $swapperc% 
 $swapbar
