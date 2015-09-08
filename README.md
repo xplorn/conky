@@ -1,5 +1,6 @@
 ## conky
-<img src='conky weather 2.png"><img src='conky.png'>
+<img src='conky weather 2.png'>
+<img src='conky.png'>
 
 ## Description
 I have a right column with time, calendar, system info and some stats.
