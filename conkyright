@@ -59,7 +59,7 @@ alignment top_right
 
 use_spacer none
 
-no_buffers no
+no_buffers yes
 
 uppercase no
 
