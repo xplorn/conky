@@ -1,4 +1,7 @@
 ## conky
+
+NOTE: This config is for conky version 1.9 or older. Configs changed to lua-like format in 1.10.
+
 <img src='conky weather 2.png'>
 <img src='conky.png'>
 
